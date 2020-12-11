@@ -52,14 +52,22 @@ const server = http.createServer((req, res) => {
 
     // Route the request to the handler specified in the router
     chosenHandler(data, (statusCode, payload) => {
+      // Use the status code called back by the handle, or default
+      statusCode = typeof(statusCode) === 'number' ? statusCode : 200;
 
+      // Use the payload called back by the handler, or default
+      payload = typeof(payload) === 'object' ? payload : {};
+
+      // Convert the payload to a string
+      const payloadString = JSON.stringify(payload);
+
+      // Send the response and write statusCode
+      res.writeHead(statusCode);
+      res.end(payloadString);
+
+      // Log the request path
+      console.log(`Returning the response: `, statusCode, payloadString);
     });
-
-    // Send the response
-    res.end('Hello world!\n');
-
-    // Log the request path
-    console.log(`Payload is: ${buffer}`);
   });
 });
 
