@@ -6,7 +6,6 @@
 const server = require('./lib/server');
 const workers = require('./lib/workers');
 
-// Declaring an app
 const app = {
 
   /**
@@ -17,12 +16,11 @@ const app = {
     // Start the server
     server.init();
 
-    // Star the workers
+    // Start the workers
     workers.init();
   }
 };
 
-// Self executing
 app.init();
 
 module.exports = app;
