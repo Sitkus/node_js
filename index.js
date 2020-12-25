@@ -11,7 +11,7 @@ const app = {
   /**
    * Initialize method
    */
-  init: () => {
+  init() {
 
     // Start the server
     server.init();
