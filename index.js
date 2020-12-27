@@ -7,12 +7,10 @@ const server = require('./lib/server');
 const workers = require('./lib/workers');
 
 const app = {
-
   /**
    * Initialize method
    */
   init() {
-
     // Start the server
     server.init();
 
