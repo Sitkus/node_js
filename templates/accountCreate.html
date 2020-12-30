@@ -1,7 +1,7 @@
 <h1>Create Your Account</h1>
 <h2>Signup is easy and only takes a few seconds.</h2>
 
-<form action="/api/uers" method="POST" class="form">
+<form id="form--create" action="/api/users" method="POST" class="form">
   <p class="form__error"></p>
   <label for="firstName" class="form__label">
     <p class="form__label-descriptor">First Name</p>
@@ -23,4 +23,5 @@
     <p class="form__label-descriptor">Do you agree to the terms and conditions?</p>
     <input name="tosAgreement" type="checkbox" class="form__input" value="agree" />
   </label>
+  <button type="submit" class="form__btn">Sign Up</button>
 </form>
