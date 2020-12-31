@@ -1,0 +1,15 @@
+<h1>Login To Your Account</h1>
+<h2>Enter your phone number and password</h2>
+
+<form id="form--session-create" action="/api/tokens" method="POST" class="form">
+  <p class="form__error"></p>
+  <label for="phone" class="form__label">
+    <p class="form__label-descriptor">Phone Number</p>
+    <input name="phone" type="text" class="form__input" placeholder="65883947" />
+  </label>
+  <label for="password" class="form__label">
+    <p class="form__label-descriptor">Your Password</p>
+    <input name="password" type="password" class="form__input" placeholder="********" />
+  </label>
+  <button type="submit" class="form__btn">Login</button>
+</form>

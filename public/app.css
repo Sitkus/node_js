@@ -1,3 +1,19 @@
 body {
   background-color: lightblue;
 }
+
+.nav__item--logged-out {
+  display: block;
+}
+
+.nav__item--logged-in {
+  display: none;
+}
+
+.logged-in .nav__item--logged-out {
+  display: none;
+}
+
+.logged-in .nav__item--logged-in {
+  display: block;
+}
