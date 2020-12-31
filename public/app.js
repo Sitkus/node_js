@@ -33,7 +33,6 @@ const app = {
       let headersPreparedForFetch = new Headers({
         'Content-Type': 'application/json'
       });
-      // headersPreparedForFetch.append('Content-Type', 'application/json');
 
       if (app.config.sessionToken) {
         headersPreparedForFetch.append('token', app.config.sessionToken.id);
@@ -43,16 +42,13 @@ const app = {
         headersPreparedForFetch.append(headerKey, headers[headerKey]);
       }
 
-      // console.log(requestUrl, method, headersPreparedForFetch);
-
       fetch(requestUrl, {
         method: method,
-        headers: headersPreparedForFetch
+        headers: headersPreparedForFetch,
+        body: JSON.stringify(payload)
       })
         .then((response) => {
-          console.log(response);
           return response.json().then((data) => {
-            console.log(data);
             return {
               status: response.status,
               body: data
@@ -60,7 +56,6 @@ const app = {
           });
         })
         .then((response) => {
-          console.log(response);
           if (callback) {
             try {
               callback(response.status, response.body);
@@ -85,7 +80,6 @@ const app = {
 
       let payload = {};
       const elements = selectedForm.elements;
-      console.log(elements);
 
       for (let i = 0; i < elements.length; i++) {
         if (elements[i].nodeName !== 'BUTTON') {
@@ -95,7 +89,6 @@ const app = {
           payload[elements[i].name] = valueOfElement;
         }
       }
-      console.log(payload);
 
       app.client.request(undefined, path, method, undefined, payload, (statusCode, responsePayload) => {
         if (statusCode !== 200) {
