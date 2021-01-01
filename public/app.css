@@ -1,5 +1,85 @@
+/*------------------------------------*\
+  # Default settings
+\*------------------------------------*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Helvetica Neue', 'sans-serif';
+  font-size: 10px;
+  background-color: white;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  overflow-y: scroll;
+}
+
 body {
-  background-color: lightblue;
+  position: relative;
+  min-width: 32rem;
+  color: #161616;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-size: 1.6rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*------------------------------------*\
+  # Navigation
+\*------------------------------------*/
+
+.header {
+  background-color: papayawhip;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 100rem;
+  height: 7rem;
+  padding: 0 5rem;
+}
+
+.logo {
+  flex: 1;
+}
+
+.logo__image {
+  height: 4rem;
+  width: auto;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+}
+
+.nav__item {
+  margin-right: 4rem;
+}
+
+.nav__item--logged-out:last-child {
+  margin-right: 0;
+}
+
+.nav__item--logged-in:last-child {
+  margin-right: 0;
 }
 
 .nav__item--logged-out {
@@ -16,4 +96,122 @@ body {
 
 .logged-in .nav__item--logged-in {
   display: block;
+}
+
+/*------------------------------------*\
+  # Main
+\*------------------------------------*/
+
+.main {
+  min-height: calc(100vh - 14rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__title {
+  font-weight: 600;
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+.main__subtitle {
+  font-weight: 600;
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+}
+
+/*------------------------------------*\
+  # Form
+\*------------------------------------*/
+
+.form {
+  padding: 5rem;
+  background-color: #f9f9f9;
+  max-width: 50rem;
+  width: 100%;
+}
+
+.form__error {
+  color: red;
+  margin-bottom: 2rem;
+}
+
+.form__label-descriptor {
+  margin-bottom: 0.7rem;
+}
+
+.form__input {
+  margin-bottom: 2rem;
+  width: 100%;
+  padding: 1.5rem 1rem;
+}
+
+.form__label--checkbox {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.form__btn {
+  padding: 1.5rem 1rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: papayawhip;
+}
+
+.form__btn:hover {
+  background-color: #161616;
+  color: papayawhip;
+}
+
+/*------------------------------------*\
+  # Hero
+\*------------------------------------*/
+
+.hero {
+  max-width: 100rem;
+  padding: 5rem;
+  background-color: #f9f9f9;
+}
+
+.hero__description {
+  margin-bottom: 4rem;
+  line-height: 1.6;
+}
+
+.hero__buttons {
+  display: flex;
+  justify-content: space-between;
+  max-width: 40%;
+  margin: 0 auto;
+}
+
+.hero__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15rem;
+  padding: 2rem;
+  background-color: papayawhip;
+  cursor: pointer;
+}
+
+.hero__button:hover {
+  background-color: #161616;
+  color: papayawhip;
+}
+
+/*------------------------------------*\
+  # Footer
+\*------------------------------------*/
+
+.footer {
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

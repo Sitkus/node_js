@@ -10,6 +10,8 @@
 
     <link type="image/x-icon" rel="icon" href="favicon.ico" />
     <script type="text/javascript" charset="utf-8" src="public/app.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="public/app.css" />
   </head>
   <body>
@@ -25,19 +27,19 @@
             <a href="/" class="nav__link">Home</a>
           </li>
           <li class="nav__item  nav__item--logged-out">
-            <a href="/" class="nav__link">Signup</a>
+            <a href="/account/create" class="nav__link">Signup</a>
           </li>
           <li class="nav__item  nav__item--logged-out">
-            <a href="/" class="nav__link">Login</a>
+            <a href="/session/create" class="nav__link">Login</a>
           </li>
           <li class="nav__item  nav__item--logged-in">
-            <a href="/" class="nav__link">Dashboard</a>
+            <a href="/checks/all" class="nav__link">Dashboard</a>
           </li>
           <li class="nav__item  nav__item--logged-in">
-            <a href="/" class="nav__link">Account Settings</a>
+            <a href="/account/edit" class="nav__link">Account Settings</a>
           </li>
           <li class="nav__item  nav__item--logged-in">
-            <a href="/" id="logout-btn" class="nav__link">Logout</a>
+            <a href="#" id="logout-btn" class="nav__link">Logout</a>
           </li>
         </ul>
       </nav>
