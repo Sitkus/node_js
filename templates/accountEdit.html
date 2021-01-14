@@ -1,0 +1,60 @@
+<h1 class="main__title">Account Settings</h1>
+<h2 class="main__subtitle">Edit your account details</h2>
+
+<form action="/api/users" method="PUT" id="form--account-edit" class="form">
+  <input type="hidden" name="_method" value="PUT" />
+  <p class="form__error"></p>
+  <p class="form__success">Your Changed Have Been Saved</p>
+  <input type="hidden" name="phone" class="form__input--hidden" />
+
+  <label class="form__label">
+    <p class="form__label-descriptor">Phone Number</p>
+    <input
+      name="displayPhone"
+      type="text"
+      class="form__input form__input--disabled form__input--display-phone-input"
+      disabled
+    />
+  </label>
+
+  <label class="form__label">
+    <p class="form__label-descriptor">First Name</p>
+    <input name="firstName" type="text" class="form__input form__input--first-name" placeholder="John" />
+  </label>
+
+  <label class="form__label">
+    <p class="form__label-descriptor">Last Name</p>
+    <input name="lastName" type="text" class="form__input form__input--last-name" placeholder="Smith" />
+  </label>
+
+  <button type="submit" class="form__btn">Save Changes</button>
+</form>
+
+<div class="main__seperator"></div>
+<h2 class="main__subtitle">Change Your Password</h2>
+
+<form action="/api/users" method="PUT" id="form--account-edit2" class="form">
+  <input type="hidden" name="_method" value="PUT" />
+  <p class="form__error"></p>
+  <p class="form__success">Your New Password Has Been Saved</p>
+  <input type="hidden" name="phone" class="form__input--hidden" />
+
+  <label class="form__label">
+    <p class="form__label-descriptor">Choose a New Password</p>
+    <input name="password" type="password" class="form__input" placeholder="Make a good password!" />
+  </label>
+
+  <button type="submit" class="form__btn">Save Password</button>
+</form>
+
+<div class="main__seperator"></div>
+<h2 class="main__subtitle">Delete Your Account</h2>
+
+<form action="/api/users" method="DELETE" id="form--account-deleted" class="form">
+  <input type="hidden" name="_method" value="DELETE" />
+  <p class="form__error"></p>
+  <p class="form__warning">Warning: This action cannot be undone. Dont click this button on accident!</p>
+  <input type="hidden" name="phone" class="form__input--hidden" />
+
+  <button type="submit" class="form__btn">Delete Account</button>
+</form>

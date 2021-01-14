@@ -1,0 +1,67 @@
+<h1 class="main__title">Create a Check</h1>
+<h2 class="main__subtitle">Your check will run once per minute</h2>
+<a href="/checks/all" class="main__back-btn">Back</a>
+
+<form action="/api/checks" method="POST" class="form" id="form--checks-create">
+  <p class="form__error"></p>
+  <label class="form__label">
+    <p class="form__label-descriptor">Protocol</p>
+    <select name="protocol" class="form__select">
+      <option value="http" selected>http://</option>
+      <option value="https">https://</option>
+    </select>
+  </label>
+
+  <label class="form__label">
+    <p class="form__label-descriptor">URL (not including protocol)</p>
+    <input name="url" type="text" class="form__input" placeholder="mywebsite.com/my/path" />
+  </label>
+
+  <p class="form__label-descriptor">Success Codes (HTTP codes that should represent "up")</p>
+  <div class="checkboxes">
+    <input
+      name="successCodes"
+      type="checkbox"
+      class="form__checkbox form__multiselect form__intval"
+      value="200"
+      checked
+    />200
+    <input
+      name="successCodes"
+      type="checkbox"
+      class="form__checkbox form__multiselect form__intval"
+      value="201"
+      checked
+    />201
+    <input name="successCodes" type="checkbox" class="form__checkbox form__multiselect form__intval" value="301" />301
+    <input name="successCodes" type="checkbox" class="form__checkbox form__multiselect form__intval" value="302" />302
+    <input name="successCodes" type="checkbox" class="form__checkbox form__multiselect form__intval" value="400" />400
+    <input name="successCodes" type="checkbox" class="form__checkbox form__multiselect form__intval" value="403" />403
+    <input name="successCodes" type="checkbox" class="form__checkbox form__multiselect form__intval" value="404" />404
+    <input name="successCodes" type="checkbox" class="form__checkbox form__multiselect form__intval" value="406" />406
+    <input name="successCodes" type="checkbox" class="form__checkbox form__multiselect form__intval" value="500" />500
+  </div>
+
+  <label class="form__label">
+    <p class="form__label-descriptor">HTTP Method</p>
+    <select name="httpmethod" class="form__select">
+      <option value="post">POST</option>
+      <option value="get" selected>GET</option>
+      <option value="put">PUT</option>
+      <option value="delete">DELETE</option>
+    </select>
+  </label>
+
+  <label class="form__label">
+    <p class="form__label-descriptor">Timeout</p>
+    <select name="timeoutSeconds" class="form__select form__intval">
+      <option value="1">1 second</option>
+      <option value="2">2 seconds</option>
+      <option value="3">3 seconds</option>
+      <option value="4">4 seconds</option>
+      <option value="5">5 seconds</option>
+    </select>
+  </label>
+
+  <button type="submit" class="form__btn">Create Check</button>
+</form>

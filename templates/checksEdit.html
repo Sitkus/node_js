@@ -1,0 +1,138 @@
+<h1 class="main__title">Check Details</h1>
+<a href="/checks/all" class="main__back-btn">Back</a>
+
+<h2 class="main__subtitle">Edit the check details</h2>
+
+<form action="/api/checks" method="PUT" class="form" id="form--checks-edit">
+  <input type="hidden" name="_method" value="PUT" />
+  <p class="form__error"></p>
+  <p class="form__success">Your Changed Have Been Saved</p>
+  <input type="hidden" name="uid" class="form__input--hidden form__input--hidden-id" />
+
+  <label class="form__label">
+    <p class="form__label-descriptor">Check ID</p>
+    <input
+      name="displayId"
+      type="text"
+      class="form__input form__input--disabled form__input--display-id-input"
+      disabled
+    />
+  </label>
+
+  <label class="form__label">
+    <p class="form__label-descriptor">Current State</p>
+    <input
+      name="displayState"
+      type="text"
+      class="form__input form__input--disabled form__input--display-state"
+      disabled
+    />
+  </label>
+
+  <label class="form__label">
+    <p class="form__label-descriptor">Protocol</p>
+    <select name="protocol" class="form__select form__select--protocol">
+      <option value="http" selected>http://</option>
+      <option value="https">https://</option>
+    </select>
+  </label>
+
+  <label class="form__label">
+    <p class="form__label-descriptor">URL (not including protocol)</p>
+    <input name="url" type="text" class="form__input form__input--url" placeholder="mywebsite.com/my/path" />
+  </label>
+
+  <label class="form__label form__label--checkbox">
+    <p class="form__label-descriptor">Success Codes (HTTP codes that should represent "up")</p>
+    <div class="checkboxes">
+      <input
+        name="successCodes"
+        type="checkbox"
+        class="form__checkbox form__checkbox--success-codes form__multiselect form__intval"
+        value="200"
+      />200
+      <input
+        name="successCodes"
+        type="checkbox"
+        class="form__checkbox form__checkbox--success-codes form__multiselect form__intval"
+        value="201"
+      />201
+      <input
+        name="successCodes"
+        type="checkbox"
+        class="form__checkbox form__checkbox--success-codes form__multiselect form__intval"
+        value="301"
+      />301
+      <input
+        name="successCodes"
+        type="checkbox"
+        class="form__checkbox form__checkbox--success-codes form__multiselect form__intval"
+        value="302"
+      />302
+      <input
+        name="successCodes"
+        type="checkbox"
+        class="form__checkbox form__checkbox--success-codes form__multiselect form__intval"
+        value="400"
+      />400
+      <input
+        name="successCodes"
+        type="checkbox"
+        class="form__checkbox form__checkbox--success-codes form__multiselect form__intval"
+        value="403"
+      />403
+      <input
+        name="successCodes"
+        type="checkbox"
+        class="form__checkbox form__checkbox--success-codes form__multiselect form__intval"
+        value="404"
+      />404
+      <input
+        name="successCodes"
+        type="checkbox"
+        class="form__checkbox form__checkbox--success-codes form__multiselect form__intval"
+        value="406"
+      />406
+      <input
+        name="successCodes"
+        type="checkbox"
+        class="form__checkbox form__checkbox--success-codes form__multiselect form__intval"
+        value="500"
+      />500
+    </div>
+  </label>
+
+  <label class="form__label">
+    <p class="form__label-descriptor">HTTP Method</p>
+    <select name="httpmethod" class="form__select form__select--method">
+      <option value="post">POST</option>
+      <option value="get">GET</option>
+      <option value="put">PUT</option>
+      <option value="delete">DELETE</option>
+    </select>
+  </label>
+
+  <label class="form__label">
+    <p class="form__label-descriptor">Timeout</p>
+    <select name="timeoutSeconds" class="form__select form__select--timeout">
+      <option value="1">1 second</option>
+      <option value="2">2 seconds</option>
+      <option value="3">3 seconds</option>
+      <option value="4">4 seconds</option>
+      <option value="5">5 seconds</option>
+    </select>
+  </label>
+
+  <button type="submit" class="form__btn">Save Changes</button>
+</form>
+
+<h2 class="main__subtitle">Delete The Check</h2>
+
+<form action="/api/checks" method="DELETE" class="form" id="form--checks-delete">
+  <input type="hidden" name="_method" value="DELETE" />
+  <p class="form__error"></p>
+  <p class="form__warning">Warning: This action cannot be undone. Dont click this button on accident!</p>
+  <input type="hidden" name="uid" class="form__input--hidden form__input--hidden-id" />
+
+  <button type="submit" class="form__btn">Delete Check</button>
+</form>
