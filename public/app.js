@@ -330,7 +330,6 @@ const app = {
       app.loadChecksListPage();
     }
 
-    console.log(primaryClass);
     if (primaryClass === 'checks-edit') {
       app.loadChecksEditPage();
     }
@@ -379,6 +378,9 @@ const app = {
               ? responsePayload.checks
               : [];
 
+          // Fix here, issue with responsePayload.checks switching from object to undefined quickly.
+          console.log(typeof responsePayload.checks);
+
           if (allChecks.length > 0) {
             allChecks.forEach((checkId) => {
               const newQueryStringObject = {
@@ -424,6 +426,7 @@ const app = {
               document.querySelector('.main__btn--checks-create').style.display = 'block';
             }
           } else {
+            console.log(allChecks);
             document.querySelector('.checks__no-checks').style.display = 'table-row';
             document.querySelector('.main__btn--create-check').style.display = 'block';
           }
@@ -440,8 +443,6 @@ const app = {
       typeof window.location.href.split('=')[1] === 'string' && window.location.href.split('=')[1].length > 0
         ? window.location.href.split('=')[1]
         : false;
-
-    console.log(id);
 
     if (id) {
       const queryStringObject = {
@@ -462,7 +463,6 @@ const app = {
               hiddenIdInputs[i].value = responsePayload.id;
             }
 
-            console.log(responsePayload);
             document.querySelector('#form--checks-edit .form__input--display-id-input').value = responsePayload.id;
             document.querySelector('#form--checks-edit .form__input--display-state').value = responsePayload.state;
             document.querySelector('#form--checks-edit .form__select--protocol').value = responsePayload.protocol;
@@ -470,10 +470,12 @@ const app = {
             document.querySelector('#form--checks-edit .form__select--method').value = responsePayload.method;
             document.querySelector('#form--checks-edit .form__select--timeout').value = responsePayload.timeoutSeconds;
 
-            const successCodeCheckboxes = document.querySelectorAll('#form--checks-edit form__checkbox--success-codes');
+            const successCodeCheckboxes = document.querySelectorAll(
+              '#form--checks-edit .form__checkbox--success-codes'
+            );
 
             for (var i = 0; i < successCodeCheckboxes.length; i++) {
-              if (responsePayload.successCodes.indexOf(parseInt(successCodeCheckboxes[i].value)) > -1) {
+              if (responsePayload.successCodes.includes(parseInt(successCodeCheckboxes[i].value))) {
                 successCodeCheckboxes[i].checked = true;
               }
             }

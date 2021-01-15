@@ -103,7 +103,7 @@ a {
 \*------------------------------------*/
 
 .main {
-  min-height: calc(100vh - 14rem);
+  min-height: calc(100vh - 34rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,6 +127,34 @@ a {
   margin-top: 4rem;
 }
 
+.main__btn {
+  padding: 1.5rem 2rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: papayawhip;
+}
+
+.main__btn:hover {
+  background-color: #161616;
+  color: papayawhip;
+}
+
+.main__back-btn {
+  padding: 1.5rem 1rem;
+  width: auto;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: yellowgreen;
+  margin-bottom: 2rem;
+}
+
+.main__back-btn:hover {
+  background-color: #161616;
+  color: papayawhip;
+}
+
 /*------------------------------------*\
   # Form
 \*------------------------------------*/
@@ -138,7 +166,12 @@ a {
   width: 100%;
 }
 
+#form--checks-edit {
+  margin-bottom: 3rem;
+}
+
 .form__warning {
+  color: white;
   background-color: red;
   text-align: center;
   padding: 2rem;
@@ -189,6 +222,31 @@ a {
   color: papayawhip;
 }
 
+.form__select {
+  padding: 1.5rem 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.checkboxes__label {
+  width: 20rem;
+  margin-bottom: 1rem;
+}
+
+.form__checkbox {
+  margin-right: 1rem;
+}
+
+.checkboxes__label:last-of-type {
+  margin-bottom: 0;
+}
+
 /*------------------------------------*\
   # Message
 \*------------------------------------*/
@@ -205,6 +263,37 @@ a {
 .message__link:hover {
   background-color: #161616;
   color: papayawhip;
+}
+
+/*------------------------------------*\
+  # Table
+\*------------------------------------*/
+
+.checks,
+.checks__row,
+tbody,
+th,
+tr,
+td {
+  border-collapse: collapse;
+  padding: 1rem 1.5rem;
+  border: 1px solid black;
+}
+
+.checks {
+  margin-bottom: 2rem;
+}
+
+.checks td a {
+  color: teal;
+}
+
+.checks td a:hover {
+  color: #161616;
+}
+
+.checks__no-checks {
+  display: none;
 }
 
 /*------------------------------------*\
